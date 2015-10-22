@@ -14,7 +14,7 @@ module Codacy
     end
 
     def self.git_commit
-      git("log -1 --pretty=format:'%H'")
+      `git rev-parse HEAD`.strip!
     end
 
     def self.git_dir
